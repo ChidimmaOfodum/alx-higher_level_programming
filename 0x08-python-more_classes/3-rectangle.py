@@ -48,5 +48,8 @@ class Rectangle:
         result = ""
         for i in range(self.height):
             result += ("#" * self.width)
-            result += "\n"
+
+            if (i != self.height - 1):
+                result += "\n"
+
         return result
