@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Module that defines a function is_kind_of_class"""
+""" Module that defines a function"""
 
 
 def is_kind_of_class(obj, a_class):
