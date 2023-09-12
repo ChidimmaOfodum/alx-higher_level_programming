@@ -15,8 +15,9 @@ class BaseGeometry:
         Args:
             name: name of the input 
             value: value associated to the name
-        Returns: 
-            None - raises an error if value is not valid
+        Raises: 
+            TypeError: if value not an integer
+            ValueError: if value <= 0
         """
 
         if (type(value) is not int):
