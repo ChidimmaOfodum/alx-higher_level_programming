@@ -30,7 +30,7 @@ in a TypeError.
 
     >>> bg = BaseGeometry(None)
     Traceback (most recent call last):
-    TypeError: object() takes no parameters
+    TypeError: BaseGeometry() takes no arguments
 
 Methods
 =======
@@ -65,8 +65,6 @@ check. The second argument, ``value``, is the argument to check.
 If ``value`` is a valid integer, the function does nothing.
 
 ::
-
-
    >>> bg.integer_validator("valid number", 1)
 
 But, if ``value`` is not an integer, a ``TypeError`` is raised.
