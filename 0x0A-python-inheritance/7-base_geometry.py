@@ -7,9 +7,18 @@ class BaseGeometry:
     """A basegeometry class"""
 
     def area(self):
+        """an area function not implemented"""
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
+        """validates the input 'value'
+        Args:
+            name: name of the input 
+            value: value associated to the name
+        Returns: 
+            None - raises an error if value is not valid
+        """
+
         if (type(value) is not int):
             raise TypeError(f"{name} must be an integer")
         elif (value <= 0):
