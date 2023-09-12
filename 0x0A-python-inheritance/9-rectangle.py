@@ -32,8 +32,3 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
-
-r = Rectangle(3, 5)
-
-print(r)
-print(r.area())
