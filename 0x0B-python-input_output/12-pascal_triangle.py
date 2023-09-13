@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""A module that defines paschal_triangle func"""
+
 
 def pascal_triangle(n):
     """List of integers representing Pascal triangle"""
