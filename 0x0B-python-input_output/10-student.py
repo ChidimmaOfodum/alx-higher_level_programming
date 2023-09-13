@@ -3,6 +3,7 @@
 
 
 class Student:
+    """A Student class"""
     def __init__(self, first_name, last_name, age):
         """Initialization function"""
         self.first_name = first_name
