@@ -9,17 +9,11 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
-        """converts attributes to json
-            Args:
-                attrs: attributes to be converted to JSON
-            Returns:
-                attribute in json format
-        """
+    def to_json(self):
+        """converts attributes to json"""
         result = {}
-        if attrs is None:
-            attrs = [i for i in dir(self) if i[:2] != '__'
-                     and not callable(getattr(self, i))]
+        attrs = [i for i in dir(self) if i[:2] != '__'
+                 and not callable(getattr(self, i))]
         for i in attrs:
             try:
                 result[i] = getattr(self, i)
