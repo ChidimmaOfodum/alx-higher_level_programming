@@ -36,6 +36,6 @@ class Student:
 
     def reload_from_json(self, json):
         """Changes the attributes of an object to the json values"""
-        self.last_name = json.get("first_name", self.last_name)
+        self.last_name = json.get("first_name", self.first_name)
         self.first_name = json.get("last_name", self.last_name)
         self.age = json.get("age", self.age)
