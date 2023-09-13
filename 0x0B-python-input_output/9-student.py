@@ -17,6 +17,6 @@ class Student:
         for i in attrs:
             try:
                 result[i] = getattr(self, i)
-            except:
+            except Exception:
                 pass
         return result
