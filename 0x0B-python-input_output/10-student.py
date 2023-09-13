@@ -5,17 +5,22 @@
 class Student:
     """A Student class"""
     def __init__(self, first_name, last_name, age):
-        """Initialization function"""
+        """initialization function
+        Args:
+            first_name(int): first name of student
+            last_name(int): last name of student
+            age: age of student
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
         """converts attributes to json
-            Args:
-                attrs: attributes to be converted to JSON
-            Returns:
-                attribute in json format
+        Args:
+            attrs: attributes to be converted to JSON
+        Returns:
+            attribute in json format
         """
         result = {}
         if attrs is None:
