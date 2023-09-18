@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 Base = __import__('base').Base
 
 
@@ -62,7 +63,10 @@ class Rectangle(Base):
         return (self.width * self.height)
     
     def display(self):
+        for j in range(self.y):
+            print()
         for i in range(self.height):
+            print(" " * self.x, end='')
             print('#' * self.width)
     def __str__(self):
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
