@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+"""A module that defines Rectangle class"""
 Base = __import__('base').Base
 
 
 class Rectangle(Base):
+    """A rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialization function"""
 
         self.width = width
         self.height = height
@@ -58,26 +61,27 @@ class Rectangle(Base):
         elif (y < 0):
             raise ValueError('y must be >= 0')
         self.__y = y
-    
+
     def area(self):
         return (self.width * self.height)
-    
+
     def display(self):
         for j in range(self.y):
             print()
         for i in range(self.height):
             print(" " * self.x, end='')
             print('#' * self.width)
+
     def __str__(self):
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+
     def update(self, *args, **kwargs):
         if (args is not None and len(args) != 0):
             length = len(args)
             attr = ['id', 'width', 'height', 'x', 'y']
-        
+
             for i in range(length):
                 setattr(self, attr[i], args[i])
         else:
             for i in list(kwargs.keys()):
                 setattr(self, i, kwargs[i])
-
