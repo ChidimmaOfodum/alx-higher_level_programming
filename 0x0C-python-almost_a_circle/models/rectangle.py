@@ -1,5 +1,6 @@
 Base = __import__('base').Base
 
+
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
 
@@ -8,36 +9,53 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-    
+
     @property
     def width(self):
-        return self.width
-    
+        return self.__width
+
     @width.setter
     def width(self, width):
-        self.width = width
+        if (type(width) is not int):
+            raise TypeError('width must be an integer')
+        elif (width <= 0):
+            raise ValueError('width must be > 0')
+        self.__width = width
 
     @property
     def height(self):
-        return self.height
-    
+        return self.__height
+
     @height.setter
     def height(self, height):
-        self.height = height
-    
+        if (type(height) is not int):
+            raise TypeError('height must be an integer')
+        elif (height <= 0):
+            raise ValueError('height must be > 0')
+        self.__height = height
+
     @property
     def x(self):
-        return self.x
-    
+        return self.__x
+
     @x.setter
     def x(self, x):
-        self.x = x
-    
+        if (type(x) is not int):
+            raise TypeError('x must be an integer')
+        elif (x < 0):
+            raise ValueError('x must be >= 0')
+        self.__x = x
+
     @property
     def y(self):
-        return self.y
-    
+        return self.__y
+
     @y.setter
     def y(self, y):
-        self.y = y
-
+        if (type(y) is not int):
+            raise TypeError('y must be an integer')
+        elif (y < 0):
+            raise ValueError('y must be >= 0')
+        self.__y = y
+    
+    
