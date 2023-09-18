@@ -80,3 +80,4 @@ class Rectangle(Base):
         else:
             for i in list(kwargs.keys()):
                 setattr(self, i, kwargs[i])
+
