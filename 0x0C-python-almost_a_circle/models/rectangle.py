@@ -83,6 +83,7 @@ class Rectangle(Base):
         return self.width * self.height
     
     def display(self):
+        """prints in hashed format using width and height"""
         for j in range(self.y):
             print()
         for i in range(self.height):
@@ -90,9 +91,11 @@ class Rectangle(Base):
             print('#' * self.width)
     
     def __str__(self):
+        """custom __str__ function with a specific format"""
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
     
     def update(self, *args, **kwargs):
+        """updates a particular key attribute"""
         if (args is not None and len(args) != 0):
             length = len(args)
             attr = ['id', 'width', 'height', 'x', 'y']
