@@ -22,7 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """width property getter"""
-        if type(value) == int:
+        if type(value) is int:
             if value > 0:
                 self.__width = value
             else:
@@ -38,7 +38,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """height property getter"""
-        if type(value) == int:
+        if type(value) is int:
             if value > 0:
                 self.__height = value
             else:
@@ -54,7 +54,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x property getter"""
-        if type(value) == int:
+        if type(value) is int:
             if value >= 0:
                 self.__x = value
             else:
@@ -70,7 +70,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """y property getter"""
-        if type(value) == int:
+        if type(value) is int:
             if value >= 0:
                 self.__y = value
             else:
@@ -81,7 +81,7 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle. """
         return self.width * self.height
-    
+
     def display(self):
         """prints in hashed format using width and height"""
         for j in range(self.y):
@@ -89,17 +89,19 @@ class Rectangle(Base):
         for i in range(self.height):
             print(" " * self.x, end='')
             print('#' * self.width)
-    
+
     def __str__(self):
         """custom __str__ function with a specific format"""
-        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
-    
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+        )
+
     def update(self, *args, **kwargs):
         """updates a particular key attribute"""
         if (args is not None and len(args) != 0):
             length = len(args)
             attr = ['id', 'width', 'height', 'x', 'y']
-        
+
             for i in range(length):
                 setattr(self, attr[i], args[i])
         else:
