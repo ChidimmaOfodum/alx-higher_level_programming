@@ -7,7 +7,6 @@ class Rectangle(Base):
     """A rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialization function"""
-
         self.width = width
         self.height = height
         self.x = x
@@ -16,10 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """width setter"""
         if (type(width) is not int):
             raise TypeError('width must be an integer')
         elif (width <= 0):
@@ -28,10 +29,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height getter"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """height setter"""
         if (type(height) is not int):
             raise TypeError('height must be an integer')
         elif (height <= 0):
@@ -40,10 +43,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x getter"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """x setter"""
         if (type(x) is not int):
             raise TypeError('x must be an integer')
         elif (x < 0):
@@ -52,10 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y getter"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """y setter"""
         if (type(y) is not int):
             raise TypeError('y must be an integer')
         elif (y < 0):
@@ -63,9 +70,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """area of a rectangle"""
         return (self.width * self.height)
 
     def display(self):
+        """display function"""
         for j in range(self.y):
             print()
         for i in range(self.height):
