@@ -81,3 +81,24 @@ class Rectangle(Base):
     def area(self):
         """Returns the area of the Rectangle. """
         return self.width * self.height
+    
+    def display(self):
+        for j in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * self.x, end='')
+            print('#' * self.width)
+    
+    def __str__(self):
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}")
+    
+    def update(self, *args, **kwargs):
+        if (args is not None and len(args) != 0):
+            length = len(args)
+            attr = ['id', 'width', 'height', 'x', 'y']
+        
+            for i in range(length):
+                setattr(self, attr[i], args[i])
+        else:
+            for i in list(kwargs.keys()):
+                setattr(self, i, kwargs[i])
