@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""A module that defines a Class Base"""
+"""Module containing the ``Base`` class definition."""
 
 
-class Base():
-    """A Base Class"""
+class Base:
+    """``Base`` class definition."""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialization function"""
+        """Initializes objects of class ``Base``. """
         if id is not None:
             self.id = id
         else:

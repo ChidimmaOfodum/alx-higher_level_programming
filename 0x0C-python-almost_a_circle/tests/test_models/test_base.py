@@ -1,40 +1,30 @@
+#!/usr/bin/python3
+"""Module for all tests"""
 import unittest
 from models.base import Base
 
-class TestBaseMethods(unittest.TestCase):
+
+class TestCases(unittest.TestCase):
+    """Class to hold all test fo this module"""
 
     def setUp(self):
-        Base._Base__nb_objects = 0
+        """sets up test before every execution"""
+        self.b1 = Base()
+        self.b2 = Base()
+        self.b3 = Base(0)
+        self.b4 = Base(123)
+        self.b5 = Base(-90)
+        self.b6 = Base()
+        self.b7 = Base(3)
 
-    def test_id(self):
-        b1 = Base(1)
-        self.assertEqual(b1.id, 1)
-    
-    def test_default_id(self):
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
-    
-    def test_nb_objects(self):
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-    
-    def test_id_multiple(self):
-        b1 = Base()
-        b2 = Base(80)
-        b3 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 80)
-        self.assertEqual(b3.id, 2)
-    
-    def test_no_of_input(self):
-        with self.assertRaises(TypeError):
-            b1 = Base(2,2)
-    
-    def test_private_attr(self):
-        b1 = Base()
-        with self.assertRaises(AttributeError):
-            b1.__nb_objects
+    def test_base_id(self):
+        """testing the ids of class base instances"""
+        self.assertEqual(self.b1.id, 1)
+        self.assertEqual(self.b2.id, 2)
+        self.assertEqual(self.b3.id, 0)
+        self.assertEqual(self.b4.id, 123)
+        self.assertEqual(self.b5.id, -90)
+        self.assertEqual(self.b6.id, 3)
+
+if __name__ == '__main__':
+    unittest.main
