@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """A module that defines Rectangle class"""
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
     """A rectangle class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialization function"""
         self.width = width
