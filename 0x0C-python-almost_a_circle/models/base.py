@@ -38,4 +38,6 @@ class Base:
 
     def from_json_string(json_string):
         """A function that returns object from json string"""
+        if json_string is None:
+            return []
         return json.loads(json_string)
