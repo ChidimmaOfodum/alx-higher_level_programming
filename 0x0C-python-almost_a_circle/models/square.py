@@ -24,3 +24,14 @@ class Square(Rectangle):
     def __str__(self):
         """A custom __str__ function, prints with a specific format"""
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+
+    def update(self, *args, **kwargs):
+        attr = ['id', 'size', 'x', 'y']
+        length = len(args)
+
+        if (args is not None and length != 0):
+            for i in range(length):
+                setattr(self, attr[i], args[i])
+        else:
+            for i in list(kwargs.keys()):
+                setattr(self, i, kwargs[i])
