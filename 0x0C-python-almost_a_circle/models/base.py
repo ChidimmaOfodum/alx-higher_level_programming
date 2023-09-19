@@ -27,7 +27,11 @@ class Base:
         """A function that saves json to a file"""
         f_name = cls.__name__
 
-        result = [x.to_dictionary() for x in list_objs]
-        result = cls.to_json_string(result)
+        if (list_objs is None):
+            result = "[]"
+        else:
+            result = [x.to_dictionary() for x in list_objs]
+            result = cls.to_json_string(result)
+
         with open(f"{f_name}.json", 'w') as f:
             f.write(result)
