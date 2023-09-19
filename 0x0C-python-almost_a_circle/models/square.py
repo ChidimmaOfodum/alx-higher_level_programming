@@ -18,8 +18,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, size):
         """setter function for size"""
-        self.height = size
         self.width = size
+        self.height = size
 
     def __str__(self):
         """A custom __str__ function, prints with a specific format"""
