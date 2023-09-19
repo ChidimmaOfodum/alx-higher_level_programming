@@ -35,12 +35,15 @@ class Base:
 
         with open(f"{f_name}.json", 'w') as f:
             f.write(result)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """creates a new object from the values in dictionary."""
-        obj = cls(2, 6)
-        obj.update(args = None, **dictionary)
+        if cls.__name__ == "Rectangle":
+            obj = cls(2, 6)
+        else:
+            obj = cls(2)
+        obj.update(args=None, **dictionary)
         return obj
 
     def from_json_string(json_string):
@@ -48,4 +51,3 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
-
