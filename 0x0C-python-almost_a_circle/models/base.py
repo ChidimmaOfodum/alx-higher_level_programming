@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module containing the ``Base`` class definition."""
-
+import json
 
 class Base:
     """``Base`` class definition."""
@@ -13,3 +13,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+    
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """returns a json representation of input"""
+        if (list_dictionaries is None):
+            return []
+        return json.dumps(list_dictionaries)
