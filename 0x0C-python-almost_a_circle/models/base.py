@@ -35,3 +35,7 @@ class Base:
 
         with open(f"{f_name}.json", 'w') as f:
             f.write(result)
+
+    def from_json_string(json_string):
+        """A function that returns object from json string"""
+        return json.loads(json_string)
