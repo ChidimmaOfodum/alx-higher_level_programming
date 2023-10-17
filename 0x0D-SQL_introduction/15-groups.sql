@@ -3,5 +3,5 @@
 SELECT score, count(score) AS "number" FROM second_table
 	GROUP BY score
 	HAVING count(score) > 1
-	ORDER BY count(score) DESC
+	ORDER BY score DESC
 
