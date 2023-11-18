@@ -5,9 +5,10 @@ import MySQLdb
 
 if __name__ == "__main__":
     (_, username, password, dbname) = sys.argv
+    port = 3306
     db = MySQLdb.connect(
         host='localhost', passwd=password,
-        port="3306", user=username, db=dbname
+        port=port, user=username, db=dbname
     )
 
     cur = db.cursor()
