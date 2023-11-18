@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# A script that connects to a mysql db and retrieves all states
+"""A script that connects to a mysql db and retrieves all states"""
 import sys
 import MySQLdb
 
