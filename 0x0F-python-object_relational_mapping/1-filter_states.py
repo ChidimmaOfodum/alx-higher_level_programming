@@ -10,10 +10,10 @@ if __name__ == "__main__":
         host='localhost', passwd=password,
         port=port, user=username, db=dbname
     )
-
     cur = db.cursor()
-    cur.execute('SELECT * FROM states WHERE name REGEXP "^N"')
+    cur.execute("SELECT * FROM states ORDER BY id")
     rows = cur.fetchall()
 
     for entry in rows:
-        print(entry)
+        if(entry[1][0] == "N"):
+            print(entry)
