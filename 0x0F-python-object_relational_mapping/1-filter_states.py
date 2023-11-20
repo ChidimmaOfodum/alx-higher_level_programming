@@ -15,5 +15,5 @@ if __name__ == "__main__":
     rows = cur.fetchall()
 
     for entry in rows:
-        if(entry[1][0] == "N"):
+        if (entry[1][0] == "N"):
             print(entry)
