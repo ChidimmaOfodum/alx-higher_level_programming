@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """A script that filters state by user input"""
 import sys
 import MySQLdb
