@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """fetches data from a url"""
 if __name__ == "__main__":
     from urllib import request
