@@ -5,8 +5,10 @@ if __name__ == "__main__":
     from sys import argv
     import requests
 
+    tmp = argv[1] if len(argv) > 1 else ''
+
     q = {
-        "q": argv[1]
+        "q": tmp
     }
 
     r = requests.post('http://0.0.0.0:5000/search_user', q)
