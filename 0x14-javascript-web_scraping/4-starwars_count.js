@@ -4,8 +4,7 @@
 const request = require('request');
 
 if (process.argv[2]) {
-  const url = 'https://swapi-api.alx-tools.com/api/films';
-  request(url, (_, res, body) => {
+  request(process.argv[2], (_, res, body) => {
     if (res && res.statusCode === 200) {
       let count = 0;
       const { results } = JSON.parse(body);
